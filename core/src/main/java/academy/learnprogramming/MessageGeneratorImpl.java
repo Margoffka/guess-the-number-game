@@ -40,7 +40,8 @@ public class MessageGeneratorImpl implements MessageGenerator {
         } else if (game.isGameLost()) {
             return "You lost. The number was " + game.getNumber();
         } else if (!game.isValidNumberRange()) {
-            return "Invalid number range!";
+            return "Invalid number range!\n" +
+                   "Yoy have " + game.getRemainingGuesses() + " guesses left";
         } else if (game.getRemainingGuesses() == game.getGuessCount()) {
             return "What is your first guess?";
         } else {
